@@ -6,7 +6,10 @@
 trigger:
 - main
 
-pool: MyPool
+pool: 
+ name: MyPool
+ demands:
+ - Agent.Version -equals 2.163.1
 
 steps:
 - script: echo Hello, world!
