@@ -6,7 +6,7 @@ using NutritionalRecipeBook.Application.DTOs.Requests;
 namespace NutritionalRecipeBook.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/api/nutritional")]
     [Authorize]
     public class NutritionalController : ControllerBase
     {

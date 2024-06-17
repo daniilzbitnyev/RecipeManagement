@@ -7,7 +7,7 @@ using NutritionalRecipeBook.Domain.Entities;
 namespace NutritionalRecipeBook.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("/api/cookingStep")]
     [Authorize]
     public class CookingStepController : ControllerBase
     {
@@ -21,9 +21,8 @@ namespace NutritionalRecipeBook.Api.Controllers
             _fileService = fileService;
         }
 
-        [HttpGet]
-        [Route("{cookingStepId}")]
-        public async Task<ActionResult<CookingStep>> GetById(string cookingStepId)
+        [HttpGet("{cookingStepId}")]
+        public async Task<ActionResult<CookingStep>> GetById([FromRoute] string cookingStepId)
         {
             if (string.IsNullOrEmpty(cookingStepId))
             {
@@ -61,9 +60,8 @@ namespace NutritionalRecipeBook.Api.Controllers
             return Created();
         }
 
-        [HttpPut]
-        [Route("{cookingStepId}")]
-        public async Task<IActionResult> Update(string cookingStepId, [FromForm] CookingStepRequest cookingStep)
+        [HttpPut("{cookingStepId}")]
+        public async Task<IActionResult> Update([FromRoute] string cookingStepId, [FromForm] CookingStepRequest cookingStep)
         {
             if (string.IsNullOrEmpty(cookingStepId) || !ModelState.IsValid)
             {
@@ -90,9 +88,8 @@ namespace NutritionalRecipeBook.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        [Route("{cookingStepId}")]
-        public async Task<IActionResult> Delete(string cookingStepId)
+        [HttpDelete("{cookingStepId}")]
+        public async Task<IActionResult> Delete([FromRoute] string cookingStepId)
         {
             if (string.IsNullOrEmpty(cookingStepId))
             {

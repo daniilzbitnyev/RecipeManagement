@@ -43,7 +43,7 @@ namespace NutritionalRecipeBook.Application.Services
         public async Task SendConfirmationEmail(string? email, ApplicationUser? user)
         {
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var confirmationLink = $"https://localhost:7226/api/auth/confirm-email?userId={user.Id}&token={token}";
+            var confirmationLink = $"https://nutritionalrecipebookapi20240615231122.azurewebsites.net/api/auth/confirm-email?userId={user.Id}&token={token}";
             await SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{confirmationLink}'>clicking here</a>;.", true);
         }
     }

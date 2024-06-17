@@ -15,7 +15,18 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "JWT_ISSUER": "localhost",
+        "JWT_AUDIENCE": "localhost",
+        "JWT_SECRET_KEY": "averylongsecretkeythatisrequiredtobeused",
+        "MAIL_SERVER": "smtp.gmail.com",
+        "MAIL_PORT": "587",
+        "SENDER_NAME": "danzbit125",
+        "FROM_EMAIL": "danzbit125@gmail.com",
+        "MAIL_PASSWORD": "fvyw vaov kuab xbmt",
+        "API_URL": "https://trackapi.nutritionix.com/v2/natural/nutrients",
+        "X_APP_ID": "afc4294b",
+        "X_APP_KEY": "ff1990ef720f63c8afeb5d59dcfac587"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7226;http://localhost:5039"

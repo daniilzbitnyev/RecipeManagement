@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using NutritionalRecipeBook.Application.Contracts;
+﻿using NutritionalRecipeBook.Application.Contracts;
 using NutritionalRecipeBook.Application.Mappings;
 using NutritionalRecipeBook.Application.Services;
 using NutritionalRecipeBook.Infrastructure.Contracts;

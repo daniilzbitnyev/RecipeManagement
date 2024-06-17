@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
@@ -20,7 +19,7 @@ namespace NutritionalRecipeBook.Api.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("/api/[controller]")]
+    [Route("/api/recipe")]
     public class RecipeController : ControllerBase
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
@@ -130,7 +129,7 @@ namespace NutritionalRecipeBook.Api.Controllers
         }
 
         [HttpPut("{recipeId}")]
-        public async Task<IActionResult> Update([FromForm] RecipeRequest recipe, string recipeId)
+        public async Task<IActionResult> Update([FromForm] RecipeRequest recipe, [FromRoute] string recipeId)
         {
             if (!ModelState.IsValid || recipeId.IsNullOrEmpty())
             {
@@ -171,7 +170,7 @@ namespace NutritionalRecipeBook.Api.Controllers
         }
 
         [HttpDelete("{recipeId}")]
-        public async Task<IActionResult> Delete(string recipeId)
+        public async Task<IActionResult> Delete([FromRoute] string recipeId)
         {
             if (recipeId.IsNullOrEmpty())
             {
@@ -238,7 +237,7 @@ namespace NutritionalRecipeBook.Api.Controllers
 
         [HttpGet]
         [Route("export/{recipeId}")]
-        public async Task<IActionResult> Export(string recipeId)
+        public async Task<IActionResult> Export([FromRoute] string recipeId)
         {
             if (string.IsNullOrWhiteSpace(recipeId))
             {

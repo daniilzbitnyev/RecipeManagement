@@ -6,7 +6,7 @@ using NutritionalRecipeBook.Domain.Entities;
 namespace NutritionalRecipeBook.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("/api/measurementType")]
     [Authorize]
     public class MeasurementTypeController : ControllerBase
     {

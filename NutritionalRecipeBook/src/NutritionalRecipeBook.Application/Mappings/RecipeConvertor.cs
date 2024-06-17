@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using NutritionalRecipeBook.Application.DTOs.Requests;
 using NutritionalRecipeBook.Application.DTOs.Shared;
 using NutritionalRecipeBook.Domain.Entities;

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace NutritionalRecipeBook.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("/api/ingredient")]
     [Authorize]
     public class IngredientController : ControllerBase
     {
